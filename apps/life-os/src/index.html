@@ -10,28 +10,28 @@
   <body>
     <div id="app-loader" class="loader"></div>
     <app-root></app-root>
-  </body>
-  <script>
-    (function () {
-      const darkMode = localStorage.getItem("tuiDark");
-      const isDark = (() => {
-        try {
-          return darkMode ? JSON.parse(darkMode) === true : true;
-        } catch {
-          return true;
-        }
+    <script>
+      (function () {
+        const darkMode = localStorage.getItem("tuiDark");
+        const isDark = (() => {
+          try {
+            return darkMode ? JSON.parse(darkMode) === true : true;
+          } catch {
+            return true;
+          }
+        })();
+        document.documentElement.style.background = isDark ? "#222" : "#fff";
+        fetch("assets/images/home.svg")
+          .then((r) => r.text())
+          .then((svg) => {
+            const loader = document.getElementById("app-loader");
+            loader.style.color = isDark ? "rgba(255, 255, 255, 1)" : "rgba(27, 31, 59, 1)";
+            loader.innerHTML = svg;
+            loader.classList.add("visible");
+          });
       })();
-      document.documentElement.style.background = isDark ? "#222" : "#fff";
-      fetch("assets/images/home.svg")
-        .then((r) => r.text())
-        .then((svg) => {
-          const loader = document.getElementById("app-loader");
-          loader.style.color = isDark ? "rgba(255, 255, 255, 1)" : "rgba(27, 31, 59, 1)";
-          loader.innerHTML = svg;
-          loader.classList.add("visible");
-        });
-    })();
-  </script>
+    </script>
+  </body>
   <style>
     .loader {
       position: fixed;

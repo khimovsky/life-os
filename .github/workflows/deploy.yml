@@ -32,6 +32,9 @@ jobs:
       - name: Build
         run: npx nx build life-os --configuration=production --base-href=/life-os/
 
+      - name: SPA fallback
+        run: cp dist/apps/life-os/index.html dist/apps/life-os/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
