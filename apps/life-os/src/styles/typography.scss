@@ -1,0 +1,19 @@
+html:root {
+  --tui-font-text: "Inter", system-ui, sans-serif;
+  --tui-font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--tui-font-text), sans-serif;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[tuiHeading] {
+  font-family: var(--tui-font-heading), sans-serif;
+}

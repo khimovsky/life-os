@@ -1,0 +1,7 @@
+<tui-breadcrumbs tuiFade>
+  @for (item of items(); track item.url; let last = $last) {
+  <a *tuiItem tuiLink [routerLink]="item.url" class="link" [class.link-last]="last">
+    {{ item.labelKey | transloco }}
+  </a>
+  }
+</tui-breadcrumbs>

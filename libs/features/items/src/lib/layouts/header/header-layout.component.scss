@@ -1,0 +1,12 @@
+.block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+
+  .settings {
+    display: flex;
+    gap: 0.5rem;
+  }
+}

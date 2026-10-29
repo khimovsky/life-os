@@ -1,0 +1,39 @@
+{
+  "common": {
+    "title": "Life OS"
+  },
+  "components": {
+    "language": {
+      "label": "Select language",
+      "russian": "Russian",
+      "english": "English"
+    },
+    "theme_switcher": {
+      "light": "Switch to light theme",
+      "dark": "Switch to dark theme"
+    }
+  },
+  "layouts": {
+    "basic": {
+      "sidebar": {
+        "fields": {
+          "main": "Main",
+          "things": "Things",
+          "events": "Events",
+          "documents": "Documents",
+          "analytics": "Analytics"
+        },
+        "actions": {
+          "collapse": "Collapse",
+          "expand": "Expand"
+        }
+      }
+    }
+  },
+  "pages": {
+    "development": {
+      "title": "Page Under Development",
+      "description": "This page is not ready yet, and some features may be unavailable."
+    }
+  }
+}

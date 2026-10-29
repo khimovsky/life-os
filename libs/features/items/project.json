@@ -1,0 +1,13 @@
+{
+  "name": "feature-items",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/features/items/src",
+  "prefix": "lifeos",
+  "projectType": "library",
+  "tags": ["type:feature"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

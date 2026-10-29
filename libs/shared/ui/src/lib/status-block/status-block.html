@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <tui-block-status>
+    <div class="container">
+      <img tuiSlot="top" class="image" [src]="data().img" [alt]="status()" />
+      <h4>{{ text() ?? (data().label | transloco) }}</h4>
+      @if (data().description; as description) {
+      <p>{{ description | transloco }}</p>
+      }
+      <ng-content />
+    </div>
+  </tui-block-status>
+</div>

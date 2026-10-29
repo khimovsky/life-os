@@ -1,0 +1,33 @@
+<aside [tuiNavigationAside]="expanded()" [attr.tuiTheme]="darkMode() ? 'dark' : null">
+  <header>
+    <div class="logo">
+      <tui-icon icon="@tui.university"></tui-icon>
+      @if (expanded()) {
+      <h2>{{ "common.title" | transloco }}</h2>
+      }
+    </div>
+  </header>
+  @for (item of items; track item.link) {
+  <a [iconStart]="item.icon" tuiAsideItem routerLink="/{{ item.link }}">
+    {{ item.label | transloco }}
+  </a>
+  }
+  <footer>
+    @if (expanded()) {
+    <div class="expanded-block"></div>
+    }
+    <button
+      tuiAsideItem
+      type="button"
+      [iconStart]="expanded() ? '@tui.chevron-left' : '@tui.chevron-right'"
+      (click)="handleToggle()"
+    >
+      {{
+        (expanded()
+          ? "layouts.basic.sidebar.actions.collapse"
+          : "layouts.basic.sidebar.actions.expand"
+        ) | transloco
+      }}
+    </button>
+  </footer>
+</aside>

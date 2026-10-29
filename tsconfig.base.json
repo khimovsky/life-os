@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@life-os/application-items": ["libs/application/items/src/index.ts"],
+      "@life-os/data-access-local": ["libs/data-access/local/src/index.ts"],
+      "@life-os/domain-items": ["libs/domain/items/src/index.ts"],
+      "@life-os/feature-items": ["libs/features/items/src/index.ts"],
+      "@life-os/feature-pages": ["libs/features/pages/src/index.ts"],
+      "@life-os/shared-ui": ["libs/shared/ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

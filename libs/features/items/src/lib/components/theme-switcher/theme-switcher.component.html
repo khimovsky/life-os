@@ -1,0 +1,9 @@
+<button
+  tuiIconButton
+  appearance="secondary-grayscale"
+  size="s"
+  type="button"
+  [iconStart]="darkMode() ? '@tui.sun' : '@tui.moon'"
+  (click)="darkMode.set(!darkMode())"
+  [attr.aria-label]="'components.theme_switcher.' + (darkMode() ? 'light' : 'dark') | transloco"
+></button>

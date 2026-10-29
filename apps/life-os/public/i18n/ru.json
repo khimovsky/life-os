@@ -1,0 +1,39 @@
+{
+  "common": {
+    "title": "Life OS"
+  },
+  "components": {
+    "language": {
+      "label": "Выберите язык",
+      "russian": "Русский",
+      "english": "Английский"
+    },
+    "theme_switcher": {
+      "light": "Переключить на светлую тему",
+      "dark": "Переключить на темную тему"
+    }
+  },
+  "layouts": {
+    "basic": {
+      "sidebar": {
+        "fields": {
+          "main": "Главная",
+          "things": "Вещи",
+          "events": "События",
+          "documents": "Документы",
+          "analytics": "Аналитика"
+        },
+        "actions": {
+          "collapse": "Свернуть",
+          "expand": "Развернуть"
+        }
+      }
+    }
+  },
+  "pages": {
+    "development": {
+      "title": "Раздел в разработке",
+      "description": "Страница еще не готова, часть функций может быть недоступна."
+    }
+  }
+}
