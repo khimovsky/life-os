@@ -6,5 +6,22 @@
   },
   "files": ["src/main.ts"],
   "include": ["src/**/*.d.ts"],
-  "exclude": ["jest.config.ts", "src/**/*.test.ts", "src/**/*.spec.ts"]
+  "exclude": ["jest.config.ts", "src/**/*.test.ts", "src/**/*.spec.ts"],
+  "references": [
+    {
+      "path": "../../libs/features/pages"
+    },
+    {
+      "path": "../../libs/features/items"
+    },
+    {
+      "path": "../../libs/data-access/local"
+    },
+    {
+      "path": "../../libs/domain/items"
+    },
+    {
+      "path": "../../libs/shared/ui"
+    }
+  ]
 }

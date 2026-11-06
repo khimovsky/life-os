@@ -1,0 +1,36 @@
+.theme-switch {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: var(--ui-space-2);
+  padding: var(--ui-space-2);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-surface-secondary);
+}
+
+.theme-btn {
+  display: grid;
+  place-items: center;
+  inline-size: var(--ui-control-height-xs);
+  block-size: var(--ui-control-height-xs);
+  padding: var(--ui-space-1);
+  border: 0;
+  border-radius: var(--ui-radius-full);
+  background: transparent;
+  color: var(--ui-text-secondary);
+  cursor: pointer;
+  transition: var(--ui-transition-colors);
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--ui-focus-ring);
+  }
+
+  &.selected {
+    background: var(--ui-primary);
+    color: var(--ui-primary-contrast);
+    box-shadow: var(--ui-shadow-primary);
+  }
+}

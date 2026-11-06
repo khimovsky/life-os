@@ -1,12 +1,8 @@
 .t-flag {
-  inline-size: 1.75rem;
-  block-size: 1.75rem;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
   border-radius: 50%;
   margin-inline-end: 0.5rem;
-}
-
-:host ::ng-deep .t-badge::before {
-  background-color: transparent !important;
 }
 
 [tuiOption] {

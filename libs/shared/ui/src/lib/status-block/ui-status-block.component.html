@@ -1,0 +1,19 @@
+<div class="ui-status-block">
+  <div class="ui-status-block__content">
+    <img class="ui-status-block__image" [src]="image()" alt="Status image" />
+
+    <h3 class="ui-status-block__title">
+      {{ title() }}
+    </h3>
+
+    @if (description(); as description) {
+    <p class="ui-status-block__description">
+      {{ description }}
+    </p>
+    }
+
+    <div class="ui-status-block__actions">
+      <ng-content />
+    </div>
+  </div>
+</div>

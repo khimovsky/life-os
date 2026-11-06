@@ -1,9 +1,26 @@
-<button
-  tuiIconButton
-  appearance="secondary-grayscale"
-  size="s"
-  type="button"
-  [iconStart]="darkMode() ? '@tui.sun' : '@tui.moon'"
-  (click)="darkMode.set(!darkMode())"
-  [attr.aria-label]="'components.theme_switcher.' + (darkMode() ? 'light' : 'dark') | transloco"
-></button>
+<div class="theme-switch" role="group">
+  <button
+    class="theme-btn"
+    type="button"
+    [class.selected]="!theme.isDark()"
+    [attr.aria-pressed]="!theme.isDark()"
+    [attr.aria-label]="'layouts.basic.sidebar.theme.light' | transloco"
+    (click)="theme.setMode('light')"
+  >
+    <tui-icon icon="@tui.sun" [style.font-size.px]="20" />
+  </button>
+  <tui-icon
+    [icon]="!theme.isDark() ? '@tui.chevron-right' : '@tui.chevron-left'"
+    (click)="theme.toggle()"
+  />
+  <button
+    class="theme-btn"
+    type="button"
+    [class.selected]="theme.isDark()"
+    [attr.aria-pressed]="theme.isDark()"
+    [attr.aria-label]="'layouts.basic.sidebar.theme.dark' | transloco"
+    (click)="theme.setMode('dark')"
+  >
+    <tui-icon icon="@tui.moon" [style.font-size.px]="20" />
+  </button>
+</div>

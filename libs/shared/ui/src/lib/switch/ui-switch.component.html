@@ -1,0 +1,33 @@
+<label
+  class="ui-switch"
+  [class.ui-switch--sm]="size() === 'sm'"
+  [class.ui-switch--md]="size() === 'md'"
+  [class.ui-switch--lg]="size() === 'lg'"
+  [class.ui-switch--checked]="checked()"
+  [class.ui-switch--disabled]="isDisabled()"
+  [class.ui-switch--invalid]="invalid()"
+>
+  <input
+    class="ui-switch__native"
+    type="checkbox"
+    role="switch"
+    [id]="inputId()"
+    [name]="name() || null"
+    [checked]="checked()"
+    [disabled]="isDisabled()"
+    [required]="required()"
+    [attr.aria-label]="ariaLabel() || null"
+    [attr.aria-describedby]="ariaDescribedBy() || null"
+    [attr.aria-invalid]="invalid() ? 'true' : null"
+    (change)="onInputChange($event)"
+    (blur)="onBlur()"
+  />
+
+  <span class="ui-switch__track" aria-hidden="true">
+    <span class="ui-switch__thumb"></span>
+  </span>
+
+  <span class="ui-switch__content">
+    <ng-content />
+  </span>
+</label>

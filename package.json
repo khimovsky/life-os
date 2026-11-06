@@ -2,7 +2,14 @@
   "name": "@life-os/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "npx nx serve life-os",
+    "build": "npx nx build life-os",
+    "lint": "npx nx run-many -t lint",
+    "format": "npx prettier --write .",
+    "ts": "npx nx run-many -t typecheck",
+    "projects": "npx nx show projects"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.3.0",
@@ -22,6 +29,7 @@
     "@taiga-ui/i18n": "^4.105.0",
     "@taiga-ui/icons": "^4.105.0",
     "@taiga-ui/kit": "^4.105.0",
+    "@taiga-ui/layout": "^4.105.0",
     "dexie": "^4.4.7",
     "rxjs": "~7.8.1",
     "zone.js": "^0.14.10"
@@ -37,7 +45,7 @@
     "@nx/angular": "21.1.0",
     "@nx/eslint": "21.1.0",
     "@nx/eslint-plugin": "21.1.0",
-    "@nx/js": "21.1.0",
+    "@nx/js": "^21.1.0",
     "@nx/web": "21.1.0",
     "@nx/workspace": "21.1.0",
     "@schematics/angular": "~17.3.0",

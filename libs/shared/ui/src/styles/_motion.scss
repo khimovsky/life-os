@@ -1,0 +1,35 @@
+:root {
+  --ui-duration-fast: 120ms;
+  --ui-duration-normal: 200ms;
+  --ui-duration-slow: 320ms;
+
+  --ui-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ui-easing-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --ui-transition-colors: color var(--ui-duration-normal) var(--ui-easing-standard),
+    background-color var(--ui-duration-normal) var(--ui-easing-standard),
+    border-color var(--ui-duration-normal) var(--ui-easing-standard);
+
+  --ui-transition-transform: transform var(--ui-duration-normal) var(--ui-easing-emphasized);
+
+  --ui-transition-fast: 150ms ease;
+  --ui-transition-normal: 220ms ease;
+  --ui-transition-slow: 320ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  :root {
+    --ui-transition-fast: 0ms;
+    --ui-transition-normal: 0ms;
+    --ui-transition-slow: 0ms;
+  }
+}

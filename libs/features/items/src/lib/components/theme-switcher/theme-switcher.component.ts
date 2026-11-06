@@ -1,14 +1,15 @@
 import { Component, inject } from "@angular/core";
-import { TUI_DARK_MODE, TuiButton } from "@taiga-ui/core";
+import { TuiIcon } from "@taiga-ui/core";
 import { TranslocoPipe } from "@jsverse/transloco";
+import { UiThemeService } from "@life-os/shared-ui";
 
 @Component({
   selector: "lifeos-theme-switcher",
-  imports: [TuiButton, TranslocoPipe],
+  imports: [TranslocoPipe, TuiIcon],
   templateUrl: "./theme-switcher.component.html",
   styleUrl: "./theme-switcher.component.scss",
   standalone: true,
 })
 export class ThemeSwitcherComponent {
-  protected readonly darkMode = inject(TUI_DARK_MODE);
+  protected readonly theme = inject(UiThemeService);
 }

@@ -1,5 +1,8 @@
 @use "styles/reset";
-@use "themes/light-theme";
-@use "themes/dark-theme";
+@use "../../../libs/shared/ui/src/styles/index" as ui;
 @use "styles/fonts";
-@use "styles/typography";
+
+[tuiTheme] {
+  --tui-background-base: var(--ui-bg);
+  --tui-background-elevation-1: var(--ui-bg-elevated);
+}

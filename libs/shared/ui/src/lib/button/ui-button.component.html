@@ -1,0 +1,34 @@
+<button
+  class="ui-button"
+  [class.ui-button--primary]="variant === 'primary'"
+  [class.ui-button--secondary]="variant === 'secondary'"
+  [class.ui-button--tertiary]="variant === 'tertiary'"
+  [class.ui-button--ghost]="variant === 'ghost'"
+  [class.ui-button--danger]="variant === 'danger'"
+  [class.ui-button--sm]="size === 'sm'"
+  [class.ui-button--md]="size === 'md'"
+  [class.ui-button--lg]="size === 'lg'"
+  [class.ui-button--full-width]="fullWidth"
+  [class.ui-button--loading]="loading"
+  [disabled]="isDisabled"
+  [type]="type"
+  [attr.aria-busy]="loading"
+>
+  <span class="ui-button__content" [class.ui-button__content--hidden]="loading">
+    <span class="ui-button__icon ui-button__icon--start">
+      <ng-content select="[uiButtonIconStart]" />
+    </span>
+
+    <span class="ui-button__label">
+      <ng-content />
+    </span>
+
+    <span class="ui-button__icon ui-button__icon--end">
+      <ng-content select="[uiButtonIconEnd]" />
+    </span>
+  </span>
+
+  @if (loading) {
+  <span class="ui-button__loader" aria-hidden="true"></span>
+  }
+</button>

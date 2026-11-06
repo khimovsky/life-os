@@ -1,47 +1,102 @@
-:host ::ng-deep aside[tuiNavigationAside] {
-  height: 100%;
-  background: inherit;
-  inline-size: 3rem !important;
+:host {
+  display: block;
+  block-size: 100%;
+}
 
-  &._expanded {
-    inline-size: 12.5rem !important;
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-6);
+  inline-size: 13rem;
+  block-size: 100%;
+  padding: var(--ui-space-6) var(--ui-space-3);
+  box-sizing: border-box;
+  background: var(--ui-bg-elevated);
+  border-inline-end: 1px solid var(--ui-border);
+  color: var(--ui-text);
+  font-family: var(--ui-font-family), serif;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ui-space-2);
+}
+
+.logo-icon {
+  font-size: 3rem;
+  color: var(--ui-primary);
+}
+
+.logo-title {
+  font-family: var(--ui-font-heading), serif;
+  font-size: var(--ui-font-size-2xl);
+  font-weight: var(--ui-font-weight-semibold);
+  line-height: var(--ui-line-height-tight);
+  letter-spacing: -0.025em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  min-block-size: var(--ui-control-height-md);
+  padding-inline: var(--ui-space-4);
+  border-radius: var(--ui-radius-md);
+  color: var(--ui-text-secondary);
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-medium);
+  text-decoration: none;
+  transition: var(--ui-transition-colors);
+
+  &:hover {
+    background: var(--ui-surface-secondary);
+    color: var(--ui-text);
   }
 
-  &::before,
-  &::after {
-    content: none;
+  &.active {
+    background: var(--ui-primary-soft);
+    color: var(--ui-primary);
   }
 
-  header,
-  footer {
-    padding-block-end: 0.25rem;
-    margin-block-end: 1rem;
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      padding: 0 0.25rem;
-    }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--ui-focus-ring);
   }
+}
 
-  header {
-    padding-block-start: 0.25rem;
-    box-shadow: none;
-  }
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--ui-space-4);
+  margin-block-start: auto;
+}
 
-  footer {
-    .expanded-block {
-      display: flex;
-      flex-direction: column;
-      font-size: 0.7rem;
-      gap: 0.65rem;
-      padding: 0.65rem;
-    }
-  }
+.settings {
+  display: flex;
+  gap: var(--ui-space-1);
+}
 
-  [tuiAsideItem] {
-    gap: 0.65rem;
+.help {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+  color: var(--ui-text-secondary);
+  font-size: var(--ui-font-size-xs);
+  font-weight: var(--ui-font-weight-medium);
+  padding: 0 var(--ui-space-2);
+  text-decoration: none;
+  transition: var(--ui-transition-colors);
+
+  &:hover {
+    color: var(--ui-text);
   }
 }

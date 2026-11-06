@@ -1,0 +1,16 @@
+:root,
+[data-theme="light"] {
+  --ui-shadow-sm: 0 2px 8px rgb(55 35 90 / 5%);
+  --ui-shadow-md: 0 8px 24px rgb(55 35 90 / 8%);
+  --ui-shadow-lg: 0 16px 48px rgb(55 35 90 / 12%);
+
+  --ui-shadow-primary: 0 6px 18px rgb(128 102 188 / 24%);
+}
+
+[data-theme="dark"] {
+  --ui-shadow-sm: 0 2px 8px rgb(0 0 0 / 15%);
+  --ui-shadow-md: 0 8px 24px rgb(0 0 0 / 22%);
+  --ui-shadow-lg: 0 16px 48px rgb(0 0 0 / 32%);
+
+  --ui-shadow-primary: 0 6px 20px rgb(128 102 188 / 28%);
+}

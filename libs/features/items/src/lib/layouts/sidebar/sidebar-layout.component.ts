@@ -1,9 +1,9 @@
-import { Component, inject, Input, signal } from "@angular/core";
-import { TuiAsideComponent, TuiAsideItemDirective } from "@taiga-ui/layout";
-import { RouterLink } from "@angular/router";
-import { TUI_DARK_MODE, TuiIcon } from "@taiga-ui/core";
+import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 import { TranslocoPipe } from "@jsverse/transloco";
-import { UI_STORAGE } from "@life-os/domain-items";
+import { TuiIcon } from "@taiga-ui/core";
+import { RouterLink, RouterLinkActive } from "@angular/router";
+import { LanguageSwitcherComponent } from "../../components/language-switcher/language-switcher.component";
+import { ThemeSwitcherComponent } from "../../components/theme-switcher/theme-switcher.component";
 
 export interface SidebarItem {
   link: string;
@@ -13,25 +13,19 @@ export interface SidebarItem {
 
 @Component({
   selector: "lifeos-sidebar-layout",
-  imports: [TuiAsideComponent, TuiAsideItemDirective, RouterLink, TuiIcon, TranslocoPipe],
+  imports: [
+    TranslocoPipe,
+    TuiIcon,
+    RouterLinkActive,
+    ThemeSwitcherComponent,
+    LanguageSwitcherComponent,
+    RouterLink,
+  ],
   templateUrl: "./sidebar-layout.component.html",
   styleUrl: "./sidebar-layout.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
 })
 export class SidebarLayoutComponent {
-  private readonly storage = inject(UI_STORAGE);
-
-  protected readonly darkMode = inject(TUI_DARK_MODE);
-
-  @Input() items: SidebarItem[] = [];
-
-  protected readonly expanded = signal(this.storage.getItem<boolean>("expandedSidebar", false));
-
-  protected handleToggle(): void {
-    this.expanded.update((value) => {
-      const next = !value;
-      this.storage.setItem<boolean>("expandedSidebar", next);
-      return next;
-    });
-  }
+  public readonly items = input<readonly SidebarItem[]>([]);
 }

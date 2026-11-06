@@ -1,0 +1,45 @@
+<fieldset
+  role="radiogroup"
+  class="ui-radio-group"
+  [class.ui-radio-group--vertical]="direction() === 'vertical'"
+  [class.ui-radio-group--horizontal]="direction() === 'horizontal'"
+  [class.ui-radio-group--sm]="size() === 'sm'"
+  [class.ui-radio-group--md]="size() === 'md'"
+  [class.ui-radio-group--lg]="size() === 'lg'"
+  [class.ui-radio-group--invalid]="invalid()"
+  [disabled]="isDisabled()"
+  [attr.aria-label]="ariaLabel() || null"
+  [attr.aria-describedby]="ariaDescribedBy() || null"
+  [attr.aria-invalid]="invalid() ? 'true' : null"
+  [attr.aria-required]="required() ? 'true' : null"
+>
+  @for (option of options(); track option.value; let i = $index) {
+  <label
+    class="ui-radio-group__option"
+    [class.ui-radio-group__option--disabled]="isDisabled() || option.disabled"
+    [attr.for]="optionId(i)"
+  >
+    <input
+      role="radio"
+      class="ui-radio-group__native"
+      type="radio"
+      [id]="optionId(i)"
+      [name]="groupName()"
+      [value]="i"
+      [checked]="value() === option.value"
+      [disabled]="isDisabled() || !!option.disabled"
+      [required]="required()"
+      (change)="selectOption(option)"
+      (blur)="onBlur()"
+    />
+
+    <span class="ui-radio-group__control" aria-hidden="true">
+      <span class="ui-radio-group__indicator"></span>
+    </span>
+
+    <span class="ui-radio-group__label">
+      {{ option.label }}
+    </span>
+  </label>
+  }
+</fieldset>

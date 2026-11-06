@@ -1,0 +1,178 @@
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --ui-bg: #f6f3fc;
+  --ui-bg-elevated: #ffffff;
+
+  --ui-surface: #ffffff;
+  --ui-surface-secondary: #f0ecf8;
+  --ui-surface-tertiary: #e9e3f5;
+
+  --ui-primary: #8066bc;
+  --ui-primary-hover: #6d50a9;
+  --ui-primary-active: #573d8d;
+  --ui-primary-soft: #eee8fa;
+  --ui-primary-contrast: #ffffff;
+
+  --ui-accent: #f5a1b5;
+  --ui-accent-soft: #fde8ee;
+
+  --ui-text: #292344;
+  --ui-text-secondary: #766f8e;
+  --ui-text-tertiary: #a29bb5;
+  --ui-text-inverse: #ffffff;
+
+  --ui-border: #e5def0;
+  --ui-border-strong: #d1c4e7;
+
+  --ui-success: #398e68;
+  --ui-success-soft: #e4f7ed;
+
+  --ui-warning: #c98734;
+  --ui-warning-soft: #fff4df;
+
+  --ui-danger: #d65f70;
+  --ui-danger-soft: #fee9ec;
+
+  --ui-info: #657dd0;
+  --ui-info-soft: #e8edff;
+
+  --ui-focus-ring: rgb(128 102 188 / 28%);
+  --ui-overlay: rgb(35 27 58 / 42%);
+
+  // Button
+  --ui-button-radius: 0.875rem;
+
+  --ui-button-primary-bg: #8066bc;
+  --ui-button-primary-hover: #7055ad;
+  --ui-button-primary-text: #ffffff;
+  --ui-button-primary-shadow: 0 3px 10px rgb(128 102 188 / 18%);
+  --ui-button-primary-hover-shadow: 0 5px 14px rgb(128 102 188 / 26%);
+
+  --ui-button-secondary-bg: #ffffff;
+  --ui-button-secondary-hover: #f4f0fb;
+  --ui-button-secondary-text: #604b91;
+  --ui-button-secondary-border: #e5dcf3;
+  --ui-button-secondary-hover-border: #cfc0e8;
+
+  --ui-button-tertiary-bg: #eee9f7;
+  --ui-button-tertiary-hover: #e5ddf2;
+  --ui-button-tertiary-text: #604b91;
+
+  --ui-button-ghost-text: #65577e;
+  --ui-button-ghost-hover: #f0ebf8;
+
+  --ui-button-danger-bg: #fce9ed;
+  --ui-button-danger-hover: #f8dce3;
+  --ui-button-danger-text: #bd405d;
+
+  // Input
+  --ui-input-bg: #ffffff;
+  --ui-input-bg-disabled: #f1eef6;
+  --ui-input-bg-readonly: #f8f6fb;
+
+  --ui-input-border: #e5dff0;
+  --ui-input-border-hover: #cfc1e5;
+  --ui-input-border-focus: #8066bc;
+  --ui-input-border-error: #d65d78;
+  --ui-input-border-disabled: #eae6f0;
+
+  --ui-input-text: #292344;
+  --ui-input-text-disabled: #a49caf;
+  --ui-input-placeholder: #aaa2b8;
+  --ui-input-icon: #9288a5;
+
+  --ui-input-clear-hover: #f0ebf8;
+  --ui-input-focus-error: rgb(214 93 120 / 16%);
+  --ui-input-radius: 0.875rem;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ui-bg: #101126;
+  --ui-bg-elevated: #15152f;
+
+  --ui-surface: #1c1b3a;
+  --ui-surface-secondary: #27254a;
+  --ui-surface-tertiary: #34305a;
+
+  --ui-primary: #9b75e8;
+  --ui-primary-hover: #ad8bf0;
+  --ui-primary-active: #805bd0;
+  --ui-primary-soft: #332753;
+  --ui-primary-contrast: #ffffff;
+
+  --ui-accent: #f5a18b;
+  --ui-accent-soft: #4a2d43;
+
+  --ui-text: #f3f0ff;
+  --ui-text-secondary: #b8b2d3;
+  --ui-text-tertiary: #8983a8;
+  --ui-text-inverse: #15152f;
+
+  --ui-border: #343052;
+  --ui-border-strong: #4b456d;
+
+  --ui-success: #65c99a;
+  --ui-success-soft: #193e3a;
+
+  --ui-warning: #f2bd73;
+  --ui-warning-soft: #463524;
+
+  --ui-danger: #f0808c;
+  --ui-danger-soft: #482a3b;
+
+  --ui-info: #8ea6ff;
+  --ui-info-soft: #262d55;
+
+  --ui-focus-ring: rgb(155 117 232 / 38%);
+  --ui-overlay: rgb(5 5 20 / 68%);
+
+  // Button
+  --ui-button-radius: 0.875rem;
+
+  --ui-button-primary-bg: #9b75e8;
+  --ui-button-primary-hover: #aa89ef;
+  --ui-button-primary-text: #ffffff;
+  --ui-button-primary-shadow: 0 3px 12px rgb(155 117 232 / 20%);
+  --ui-button-primary-hover-shadow: 0 5px 16px rgb(155 117 232 / 30%);
+
+  --ui-button-secondary-bg: #292747;
+  --ui-button-secondary-hover: #353052;
+  --ui-button-secondary-text: #d6c4ff;
+  --ui-button-secondary-border: #40395f;
+  --ui-button-secondary-hover-border: #625184;
+
+  --ui-button-tertiary-bg: #302b4d;
+  --ui-button-tertiary-hover: #3b345b;
+  --ui-button-tertiary-text: #d6c4ff;
+
+  --ui-button-ghost-text: #c6bce0;
+  --ui-button-ghost-hover: #292541;
+
+  --ui-button-danger-bg: #482936;
+  --ui-button-danger-hover: #5a3041;
+  --ui-button-danger-text: #ff9eb4;
+
+  // Input
+  --ui-input-bg: #1c1b3a;
+  --ui-input-bg-disabled: #24223e;
+  --ui-input-bg-readonly: #211f3b;
+
+  --ui-input-border: #393552;
+  --ui-input-border-hover: #554a76;
+  --ui-input-border-focus: #9b75e8;
+  --ui-input-border-error: #e97894;
+  --ui-input-border-disabled: #302d48;
+
+  --ui-input-text: #f3f0ff;
+  --ui-input-text-disabled: #77718d;
+  --ui-input-placeholder: #817b9a;
+  --ui-input-icon: #aaa0c7;
+
+  --ui-input-clear-hover: #302b4d;
+  --ui-input-focus-error: rgb(233 120 148 / 18%);
+  --ui-input-radius: 0.875rem;
+}

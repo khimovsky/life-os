@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.ui-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    color: var(--ui-text-primary);
+    font-family: var(--ui-font-family), serif;
+    font-size: var(--ui-font-size-sm);
+    font-weight: var(--ui-font-weight-semibold);
+    line-height: var(--ui-line-height-normal);
+  }
+
+  &__required {
+    color: var(--ui-danger);
+  }
+
+  &__control {
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__message {
+    display: block;
+    font-family: var(--ui-font-family), serif;
+    font-size: var(--ui-font-size-xs);
+    line-height: var(--ui-line-height-normal);
+
+    &--hint {
+      color: var(--ui-text-secondary);
+    }
+
+    &--error {
+      color: var(--ui-danger);
+    }
+  }
+
+  &--disabled {
+    .ui-form-field__label {
+      color: var(--ui-text-disabled);
+    }
+
+    .ui-form-field__message {
+      opacity: 0.7;
+    }
+  }
+}

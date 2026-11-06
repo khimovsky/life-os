@@ -1,0 +1,39 @@
+<div
+  class="ui-textarea"
+  [class.ui-textarea--sm]="size() === 'sm'"
+  [class.ui-textarea--md]="size() === 'md'"
+  [class.ui-textarea--lg]="size() === 'lg'"
+  [class.ui-textarea--disabled]="isDisabled()"
+  [class.ui-textarea--invalid]="invalid()"
+  [class.ui-textarea--readonly]="readOnly()"
+  [class.ui-textarea--resize-none]="resize() === 'none'"
+  [class.ui-textarea--resize-vertical]="resize() === 'vertical'"
+  [class.ui-textarea--resize-both]="resize() === 'both'"
+>
+  <textarea
+    class="ui-textarea__control"
+    [id]="inputId() || null"
+    [name]="name() || null"
+    [value]="value()"
+    [placeholder]="placeholder()"
+    [rows]="rows()"
+    [attr.minlength]="minLength() ?? null"
+    [attr.maxlength]="maxLength() ?? null"
+    [required]="required()"
+    [disabled]="isDisabled()"
+    [readOnly]="readOnly()"
+    [attr.aria-label]="ariaLabel() || null"
+    [attr.aria-describedby]="ariaDescribedBy() || null"
+    [attr.aria-invalid]="invalid() ? 'true' : null"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+  ></textarea>
+
+  @if (showCounter()) {
+  <div class="ui-textarea__footer">
+    <span class="ui-textarea__counter">
+      {{ counterText() }}
+    </span>
+  </div>
+  }
+</div>

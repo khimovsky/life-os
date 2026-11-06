@@ -1,0 +1,178 @@
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.ui-input {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  width: 100%;
+  min-width: 0;
+  padding: 0 0.875rem;
+
+  background: var(--ui-input-bg);
+  border: 1px solid var(--ui-input-border);
+  border-radius: var(--ui-input-radius, 0.875rem);
+
+  transition: background-color var(--ui-transition-fast), border-color var(--ui-transition-fast),
+    box-shadow var(--ui-transition-fast);
+
+  &--sm {
+    min-height: 2rem;
+
+    .ui-input__control {
+      font-size: var(--ui-font-size-xs);
+    }
+  }
+
+  &--md {
+    min-height: 2.5rem;
+
+    .ui-input__control {
+      font-size: var(--ui-font-size-sm);
+    }
+  }
+
+  &--lg {
+    min-height: 3rem;
+
+    .ui-input__control {
+      font-size: var(--ui-font-size-md);
+    }
+  }
+
+  &:hover:not(.ui-input--disabled):not(.ui-input--invalid) {
+    border-color: var(--ui-input-border-hover);
+  }
+
+  &:focus-within:not(.ui-input--invalid) {
+    border-color: var(--ui-input-border-focus);
+    box-shadow: 0 0 0 3px var(--ui-focus-ring);
+  }
+
+  &--invalid {
+    border-color: var(--ui-input-border-error);
+
+    &:focus-within {
+      box-shadow: 0 0 0 3px var(--ui-input-focus-error);
+    }
+  }
+
+  &--disabled {
+    background: var(--ui-input-bg-disabled);
+    border-color: var(--ui-input-border-disabled);
+    cursor: not-allowed;
+  }
+
+  &--readonly {
+    background: var(--ui-input-bg-readonly);
+  }
+
+  &__control {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+
+    color: var(--ui-input-text);
+    background: transparent;
+    border: 0;
+    outline: none;
+
+    font-family: var(--ui-font-family), serif;
+    font-weight: var(--ui-font-weight-regular);
+    line-height: var(--ui-line-height-normal);
+
+    &::placeholder {
+      color: var(--ui-input-placeholder);
+      opacity: 1;
+    }
+
+    &:disabled {
+      color: var(--ui-input-text-disabled);
+      cursor: not-allowed;
+    }
+
+    &:read-only {
+      cursor: default;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-text-fill-color: var(--ui-input-text);
+      caret-color: var(--ui-input-text);
+      -webkit-box-shadow: 0 0 0 1000px var(--ui-input-bg) inset;
+      box-shadow: 0 0 0 1000px var(--ui-input-bg) inset;
+      transition: background-color 9999s ease-out 0s;
+    }
+
+    &:autofill {
+      color: var(--ui-input-text);
+      caret-color: var(--ui-input-text);
+      box-shadow: 0 0 0 1000px var(--ui-input-bg) inset;
+    }
+  }
+
+  &__prefix,
+  &__suffix {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--ui-input-icon);
+    font-size: var(--ui-font-size-sm);
+
+    &:empty {
+      display: none;
+    }
+
+    ::ng-deep svg {
+      display: block;
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
+  &__action {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.75rem;
+    height: 1.75rem;
+
+    color: var(--ui-input-icon);
+    background: transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    transition: color var(--ui-transition-fast), background-color var(--ui-transition-fast);
+
+    &:hover {
+      color: var(--ui-input-text);
+      background: var(--ui-input-clear-hover);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ui-focus-ring);
+      outline-offset: 2px;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+}

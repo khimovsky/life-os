@@ -1,0 +1,107 @@
+<div
+  class="ui-select"
+  [class.ui-select--sm]="size === 'sm'"
+  [class.ui-select--md]="size === 'md'"
+  [class.ui-select--lg]="size === 'lg'"
+  [class.ui-select--disabled]="disabled"
+  [class.ui-select--invalid]="invalid"
+  [class.ui-select--opened]="opened"
+  [class.ui-select--multiple]="multiple"
+>
+  <div class="ui-select__control">
+    @if (multiple) { @for (option of selectedOptions; track option.value) {
+    <span class="ui-select__chip">
+      <span class="ui-select__chip-label">
+        {{ option.label }}
+      </span>
+
+      <button
+        class="ui-select__chip-remove"
+        type="button"
+        [disabled]="disabled || loading"
+        (click)="removeOption(option, $event)"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </span>
+    } }
+
+    <button
+      class="ui-select__trigger"
+      type="button"
+      [id]="inputId || null"
+      [disabled]="disabled || loading"
+      [attr.aria-label]="ariaLabel || null"
+      [attr.aria-describedby]="ariaDescribedBy || null"
+      aria-haspopup="listbox"
+      [attr.aria-expanded]="opened"
+      [attr.aria-controls]="opened ? (inputId || 'ui-select') + '-listbox' : null"
+      [attr.aria-activedescendant]="opened && activeIndex >= 0 ? optionId(activeIndex) : null"
+      (click)="toggle()"
+      (keydown)="handleKeydown($event)"
+    >
+      @if (!hasValue) {
+      <span class="ui-select__placeholder">
+        {{ placeholder }}
+      </span>
+      } @else { @if (selectedOption; as selected) {
+      <span class="ui-select__value">
+        {{ selected.label }}
+      </span>
+      } } @if (loading) {
+      <span class="ui-select__spinner" aria-hidden="true"></span>
+      } @else {
+      <svg class="ui-select__arrow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+      }
+    </button>
+
+    @if (canClear) {
+    <button class="ui-select__clear" type="button" (click)="clear($event)">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </button>
+    }
+  </div>
+
+  @if (opened) {
+  <div
+    class="ui-select__panel"
+    [id]="(inputId || 'ui-select') + '-listbox'"
+    role="listbox"
+    [attr.aria-multiselectable]="multiple ? 'true' : null"
+  >
+    <!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+    @for (option of options; track option.value; let i = $index) {
+    <div
+      class="ui-select__option"
+      [id]="optionId(i)"
+      role="option"
+      tabindex="-1"
+      [class.ui-select__option--active]="activeIndex === i"
+      [class.ui-select__option--selected]="isSelected(option)"
+      [class.ui-select__option--disabled]="option.disabled"
+      [attr.aria-selected]="isSelected(option)"
+      [attr.aria-disabled]="option.disabled || null"
+      (mouseenter)="activeIndex = i"
+      (click)="select(option)"
+    >
+      <span class="ui-select__option-label">
+        {{ option.label }}
+      </span>
+
+      @if (multiple && isSelected(option)) {
+      <svg class="ui-select__check" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m5 12 4 4L19 6" />
+      </svg>
+      }
+    </div>
+    }
+    <!-- eslint-enable @angular-eslint/template/click-events-have-key-events -->
+  </div>
+  }
+</div>

@@ -181,7 +181,7 @@ npx nx run-many -t lint
 ### Проверка форматирования
 
 ```bash
-npx nx run-many -t format   
+npx nx run-many -t format
 ```
 
 ### Проверка TypeScript-библиотек

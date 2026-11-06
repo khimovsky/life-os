@@ -1,0 +1,49 @@
+:root {
+  --ui-font-family: "Inter", system-ui, sans-serif;
+  --ui-font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --ui-font-size-xs: 0.75rem;
+  --ui-font-size-sm: 0.875rem;
+  --ui-font-size-md: 1rem;
+  --ui-font-size-lg: 1.125rem;
+  --ui-font-size-xl: 1.25rem;
+  --ui-font-size-2xl: 1.5rem;
+  --ui-font-size-3xl: 1.875rem;
+  --ui-font-size-4xl: 2.25rem;
+
+  --ui-line-height-tight: 1.2;
+  --ui-line-height-normal: 1.5;
+  --ui-line-height-relaxed: 1.65;
+
+  --ui-font-weight-regular: 400;
+  --ui-font-weight-medium: 500;
+  --ui-font-weight-semibold: 600;
+  --ui-font-weight-bold: 700;
+}
+
+html {
+  font-family: var(--ui-font-family), serif;
+  font-size: 16px;
+  line-height: var(--ui-line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--ui-font-family), serif;
+  font-weight: var(--ui-font-weight-regular);
+  line-height: var(--ui-line-height-normal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[tuiHeading] {
+  font-family: var(--ui-font-heading), serif;
+  font-weight: var(--ui-font-weight-semibold);
+  line-height: var(--ui-line-height-tight);
+  letter-spacing: -0.025em;
+}

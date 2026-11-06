@@ -1,10 +1,11 @@
 import { Component } from "@angular/core";
-import { StatusBlockComponent } from "@life-os/shared-ui";
+import { UiStatusBlockComponent } from "@life-os/shared-ui";
+import { TranslocoPipe } from "@jsverse/transloco";
 
 @Component({
   selector: "lifeos-under-development",
   standalone: true,
-  imports: [StatusBlockComponent],
+  imports: [UiStatusBlockComponent, TranslocoPipe],
   templateUrl: "./under-development.component.html",
   styleUrl: "./under-development.component.scss",
 })

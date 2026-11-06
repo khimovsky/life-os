@@ -1,0 +1,27 @@
+<div
+  class="ui-date-picker"
+  [class.ui-date-picker--sm]="size() === 'sm'"
+  [class.ui-date-picker--md]="size() === 'md'"
+  [class.ui-date-picker--lg]="size() === 'lg'"
+  [class.ui-date-picker--disabled]="isDisabled()"
+  [class.ui-date-picker--readonly]="readOnly()"
+  [class.ui-date-picker--invalid]="invalid()"
+>
+  <tui-textfield tuiTextfieldSize="s">
+    <input
+      tuiInputDate
+      [formControl]="control"
+      [min]="min()"
+      [max]="max()"
+      [placeholder]="placeholder()"
+      [attr.id]="inputId()"
+      [attr.aria-label]="ariaLabel()"
+      [attr.aria-describedby]="ariaDescribedBy()"
+      [attr.aria-invalid]="invalid()"
+      [readonly]="readOnly()"
+      (blur)="onBlur()"
+    />
+
+    <tui-calendar *tuiTextfieldDropdown />
+  </tui-textfield>
+</div>

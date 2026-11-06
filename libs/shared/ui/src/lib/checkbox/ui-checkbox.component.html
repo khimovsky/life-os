@@ -1,0 +1,49 @@
+<label
+  class="ui-checkbox"
+  [class.ui-checkbox--disabled]="isDisabled()"
+  [class.ui-checkbox--checked]="checked()"
+  [class.ui-checkbox--indeterminate]="indeterminate()"
+  [class.ui-checkbox--invalid]="invalid()"
+  [class.ui-checkbox--sm]="size() === 'sm'"
+  [class.ui-checkbox--md]="size() === 'md'"
+  [class.ui-checkbox--lg]="size() === 'lg'"
+>
+  <input
+    class="ui-checkbox__native"
+    type="checkbox"
+    [id]="id() || null"
+    [name]="name() || null"
+    [value]="value()"
+    [checked]="checked()"
+    [disabled]="isDisabled()"
+    [required]="required()"
+    [indeterminate]="indeterminate()"
+    [attr.aria-label]="ariaLabel() || null"
+    [attr.aria-describedby]="ariaDescribedBy() || null"
+    [attr.aria-invalid]="invalid() ? 'true' : null"
+    (change)="onInputChange($event)"
+    (blur)="onBlur()"
+  />
+
+  <span class="ui-checkbox__box" aria-hidden="true">
+    @if (indeterminate()) {
+    <svg class="ui-checkbox__icon ui-checkbox__icon--indeterminate" viewBox="0 0 16 16" fill="none">
+      <path d="M3.5 8H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>
+    } @else {
+    <svg class="ui-checkbox__icon ui-checkbox__icon--check" viewBox="0 0 16 16" fill="none">
+      <path
+        d="M3 8.5L6.5 12L13 4.5"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    }
+  </span>
+
+  <span class="ui-checkbox__content">
+    <ng-content />
+  </span>
+</label>

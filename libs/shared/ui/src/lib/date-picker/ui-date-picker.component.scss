@@ -1,0 +1,73 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.ui-date-picker {
+  width: 100%;
+
+  --ui-date-picker-height: 2.5rem;
+  --ui-date-picker-font-size: var(--ui-font-size-sm);
+  --ui-date-picker-radius: var(--ui-input-radius);
+
+  tui-textfield {
+    width: 100%;
+    min-height: var(--ui-date-picker-height);
+    border-radius: var(--ui-date-picker-radius);
+  }
+
+  input[tuiInputDate] {
+    min-height: var(--ui-date-picker-height);
+    color: var(--ui-input-text);
+    font-family: var(--ui-font-family), serif;
+    font-size: var(--ui-date-picker-font-size);
+
+    &::placeholder {
+      color: var(--ui-input-placeholder);
+      opacity: 1;
+    }
+  }
+
+  &--sm {
+    --ui-date-picker-height: 2rem;
+    --ui-date-picker-font-size: var(--ui-font-size-xs);
+  }
+
+  &--md {
+    --ui-date-picker-height: 2.5rem;
+    --ui-date-picker-font-size: var(--ui-font-size-sm);
+  }
+
+  &--lg {
+    --ui-date-picker-height: 3rem;
+    --ui-date-picker-font-size: var(--ui-font-size-md);
+  }
+
+  &--invalid {
+    tui-textfield {
+      outline: 1px solid var(--ui-input-border-error);
+      outline-offset: -1px;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+
+    tui-textfield {
+      background: var(--ui-input-bg-disabled);
+    }
+  }
+
+  &--readonly {
+    tui-textfield {
+      background: var(--ui-input-bg-readonly);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-date-picker * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
